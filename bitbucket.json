@@ -1,0 +1,22 @@
+[
+    {
+      "id": "webhook",
+      "execute-command": "/home/user/redeploy-go-webhook.sh",
+      "command-working-directory": "/home/user/go",
+      "pass-arguments-to-command":
+      [
+        {
+          "source": "payload",
+          "name": "actor.username"
+        }
+      ],
+      "trigger-rule":
+      {
+        "match":
+        {
+          "type": "ip-whitelist",
+          "ip-range": "104.192.143.0/24"
+        }
+      }
+    }
+  ]

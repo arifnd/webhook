@@ -1,0 +1,11 @@
+[Unit]
+Description=Webhook Service
+After=network.target
+
+[Service]
+WorkingDirectory=PATH
+EnvironmentFile=PATH/.env
+ExecStart=PATH/webhook -hooks $HOOKS -ip $IP -port $PORT $VERBOSE $HOTRELOAD
+
+[Install]
+WantedBy=multi-user.target

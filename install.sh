@@ -51,4 +51,9 @@ sed -e "s@PATH@$FOLDER_PATH@g" systemd-example.service > $SERVICE_PATH/webhook.s
 echo "[DONE]"
 echo -ne "Install systemd service..."
 chmod +x $SERVICE_PATH/webhook.service
+echo -ne "Enable webhook service..."
+systemctl enable webhook
+echo "[DONE]"
+echo -ne "Start webhook service..."
+systemctl start webhook
 echo "[DONE]"
